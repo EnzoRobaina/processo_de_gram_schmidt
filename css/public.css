@@ -1,0 +1,21 @@
+.no-margin{
+    margin: 0 !important;
+}
+body{
+    background-color: rgb(245, 245, 245);
+}
+.form-bounds{
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+form{
+    background-color: white;
+    border-radius: 5px;
+    padding: 5%;
+}
+@media screen and (max-width: 768px){
+    .form-bounds{
+        margin-left: 3vw !important;
+        margin-right: 3vw !important;
+    }
+}
