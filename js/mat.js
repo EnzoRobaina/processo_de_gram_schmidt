@@ -1,12 +1,12 @@
-export function produtoEscalar(vetor1, vetor2){
+export function calcularProdutoEscalar(vetor1, vetor2){
     if (vetor1.length != vetor2.length){
         throw('Erro! A dimensão dos vetores é diferente.')
     }
     return vetor1.reduce((acumulador, valor, i)=> acumulador += (vetor1[i] * vetor2[i]), 0)
 }
 
-export function norma(vetor){
-    return Math.sqrt(produtoEscalar(vetor, vetor))
+export function calcularNorma(vetor){
+    return Math.sqrt(calcularProdutoEscalar(vetor, vetor))
 }
 
 export function subtrairVetores(vetor1, vetor2){
@@ -18,7 +18,7 @@ export function multiplicarPorEscalar(vetor, escalar){
 }
 
 export function calcularProjecao(vetor1, vetor2){
-    let resultadoProdEscalar = produtoEscalar(vetor1, vetor2)
-    let resultadoNorma = Math.pow(norma(vetor1), 2)
-    return multiplicarPorEscalar(vetor1, resultadoProdEscalar/resultadoNorma).map(valor => parseFloat(valor.toFixed(2)))
+    let produtoEscalar = calcularProdutoEscalar(vetor1, vetor2)
+    let norma = Math.pow(calcularNorma(vetor1), 2)
+    return multiplicarPorEscalar(vetor1, produtoEscalar/norma).map(valor => parseFloat(valor.toFixed(2)))
 }
