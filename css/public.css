@@ -22,3 +22,6 @@ form{
         margin-right: 3vw !important;
     }
 }
+.inline{
+    display: inline !important;
+}
