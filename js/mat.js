@@ -12,3 +12,7 @@ export function norma(vetor){
 export function subtrairVetores(vetor1, vetor2){
     return vetor1.map((valor, indice)=> valor - vetor2[indice])
 }
+
+export function multiplicarPorEscalar(vetor, escalar){
+    return vetor.map(valor=> valor * escalar)
+}
