@@ -16,3 +16,9 @@ export function subtrairVetores(vetor1, vetor2){
 export function multiplicarPorEscalar(vetor, escalar){
     return vetor.map(valor=> valor * escalar)
 }
+
+export function calcularProjecao(vetor1, vetor2){
+    let resultadoProdEscalar = produtoEscalar(vetor1, vetor2)
+    let resultadoNorma = Math.pow(norma(vetor1), 2)
+    return multiplicarPorEscalar(vetor1, resultadoProdEscalar/resultadoNorma).map(valor => parseFloat(valor.toFixed(2)))
+}
