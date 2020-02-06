@@ -23,7 +23,7 @@ console.log(ortonormalizarGramSchmidt([v1, v2, v3]))
 $(document).ready(function(){
     function getTamanhoVetor(dimensao){
         return `<div class="col-md-${(dimensao == 5) ? 2 : Math.floor((12-3)/dimensao)}"><input type="number" class="form-control"></div>`.repeat(dimensao)
-        + `<div class="col-md-${(dimensao == 5) ? 1: 2}"><button class = "btn-dice btn btn-block btn-outline-primary"><i class="fas fa-dice-five"></i></button></div>`
+        + `<div class="ml-auto pl-1 col-md-${(dimensao == 5) ? 1: 2}"><button class = "btn-dice btn btn-block btn-outline-primary"><i class="fas fa-dice-five"></i></button></div>`
     }
 
     function removerInputs(){
@@ -32,8 +32,8 @@ $(document).ready(function(){
 
     $("form").on('click', '.btn-dice', function(event) {
         event.preventDefault()
-        $(this).parents(".row-vetor").find($("input[type='number']")).each(function(i, e){
-            $(e).val(obterNumeroAleatorio(0, 99))
+        $(this).parents(".row-vetor").find($("input[type='number']")).each(function(indice, elemento){
+            $(elemento).val(obterNumeroAleatorio(0, 99))
         })
     })
     
