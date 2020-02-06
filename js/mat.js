@@ -22,3 +22,16 @@ export function calcularProjecao(vetor1, vetor2){
     let norma = Math.pow(calcularNorma(vetor1), 2)
     return multiplicarPorEscalar(vetor1, produtoEscalar/norma).map(valor => parseFloat(valor.toFixed(2)))
 }
+
+export function ortonormalizarGramSchmidt(listaDeVetores){
+    let listaOrtonormalizada = []
+    for (let i = 0; i < listaDeVetores.length; i++) {
+        let temp = listaDeVetores[i]
+        for (var j = 0; j < i; j++) {
+            // let produtoEscalar = calcularProdutoEscalar(listaDeVetores[i], listaDeVetores[j])
+            temp = subtrairVetores(temp, calcularProjecao(temp, listaDeVetores[0]))
+        }
+        listaOrtonormalizada.push(multiplicarPorEscalar(temp, 1 / calcularNorma(temp)))
+    }
+    return listaOrtonormalizada
+}
