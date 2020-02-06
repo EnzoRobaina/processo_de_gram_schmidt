@@ -8,3 +8,7 @@ export function produtoEscalar(vetor1, vetor2){
 export function norma(vetor){
     return Math.sqrt(produtoEscalar(vetor, vetor))
 }
+
+export function subtrairVetores(vetor1, vetor2){
+    return vetor1.map((valor, indice)=> valor - vetor2[indice])
+}
