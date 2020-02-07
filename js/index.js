@@ -42,7 +42,7 @@ $(document).ready(function(){
         for (let i = 0; i < dimensao; i++){
             $("form").append(
                 `<div class="form-group row row-vetor">
-                    <label class="col-md-1 col-form-label">#${i+1}:</label>
+                    <label class="col-md-1 col-form-label">v${i+1}:</label>
                     ${getTamanhoVetor(dimensao)}
                 </div>`
             )
