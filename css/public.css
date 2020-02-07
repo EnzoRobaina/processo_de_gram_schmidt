@@ -3,6 +3,7 @@
 }
 body{
     background-color: rgb(245, 245, 245);
+    font-family: 'Montserrat', sans-serif !important;
 }
 .form-bounds{
     margin-left: 5vw;
@@ -24,4 +25,7 @@ form{
 }
 .inline{
     display: inline !important;
+}
+#gram-img{
+    width: 50%;
 }
