@@ -43,3 +43,15 @@ export function obterNumeroAleatorio(min, max) {
 export function toFixedVetor(vetor){
     return vetor.map(e => parseFloat(e.toFixed(2)))
 }
+
+export function vetoresSaoIguais(vetor1, vetor2){
+    return JSON.stringify(vetor1) == JSON.stringify(vetor2)
+}
+
+export function gerarVetorNulo(dimensao){
+    let vetor = []
+    for (let i = 0; i < dimensao; i++){
+        vetor[i] = 0
+    }
+    return vetor
+}

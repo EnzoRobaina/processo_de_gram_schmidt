@@ -6,7 +6,9 @@ import {
     calcularProjecao,
     ortonormalizarGramSchmidt,
     obterNumeroAleatorio,
-    toFixedVetor
+    toFixedVetor,
+    vetoresSaoIguais,
+    gerarVetorNulo
 } from './mat.js'
 
 const v1 = [1, 2, 3]
@@ -77,9 +79,15 @@ $(document).ready(function(){
             $(this).find("input[type='number']").each(function(indice, elemento){
                 vetorInterno.push(parseInt(elemento.value))
             })
+            // console.log(vetorInterno)
             vetores.push(vetorInterno)
         })
-        console.log(ortonormalizarGramSchmidt(vetores))
+        // console.log(ortonormalizarGramSchmidt(vetores))
+        if (vetores.some(e=> vetoresSaoIguais(e, gerarVetorNulo(vetores[0].length)))){
+            alert("Certifique-se de não enviar vetor nulo!")
+            return
+        }
+
         preencherModal(ortonormalizarGramSchmidt(vetores))
     })
 })
