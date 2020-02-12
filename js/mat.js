@@ -24,16 +24,26 @@ export function calcularProjecao(vetor1, vetor2){
 }
 
 export function ortonormalizarGramSchmidt(listaDeVetores){
-    let listaOrtonormalizada = []
+    let vetorNulo = gerarVetorNulo(listaDeVetores[0].length)
+    let ortogonais = []
     for (let i = 0; i < listaDeVetores.length; i++) {
         let temp = listaDeVetores[i]
-        for (var j = 0; j < i; j++) {
-            // let produtoEscalar = calcularProdutoEscalar(listaDeVetores[i], listaDeVetores[j])
-            temp = subtrairVetores(temp, calcularProjecao(temp, listaDeVetores[0]))
+        if (i == 0)
+            ortogonais.push(listaDeVetores[i])
+        else {
+            for (let j = 0; j < i; j++) {
+                temp = subtrairVetores(temp, calcularProjecao(temp, ortogonais[j]))
+            }
+            if (!vetoresSaoIguais(temp, vetorNulo)){
+                ortogonais.push(temp)
+            }
         }
-        listaOrtonormalizada.push(multiplicarPorEscalar(temp, 1 / calcularNorma(temp)))
     }
-    return listaOrtonormalizada
+    return normalizarListaDeVetores(ortogonais).map(e => toFixedVetor(e))
+}
+
+export function normalizarListaDeVetores(vetores){
+    return vetores.map(vetor => multiplicarPorEscalar(vetor, 1 / calcularNorma(vetor)))
 }
 
 export function obterNumeroAleatorio(min, max) {
