@@ -44,3 +44,13 @@ test('multiplicar vetor por escalar negativo', ()=>{
     expect(mat.multiplicarPorEscalar([3, 6, 9], -2))
     .toStrictEqual([-6, -12, -18])
 })
+
+test('calcular projecao de v em u', ()=>{
+    expect(mat.calcularProjecao([1, 0, 3], [-1, 4, 2]))
+    .toStrictEqual([-5/21, 20/21, 10/21])
+})
+
+test('calcular projecao de vetores ortogonais', ()=>{
+    expect(mat.calcularProjecao([1, 0, 1], [1, 0, -1]))
+    .toStrictEqual([0, 0, -0])
+})
