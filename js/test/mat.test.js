@@ -54,3 +54,89 @@ test('calcular projecao de vetores ortogonais', ()=>{
     expect(mat.calcularProjecao([1, 0, 1], [1, 0, -1]))
     .toStrictEqual([0, 0, -0])
 })
+
+test('efetuar processo de ortonormalizacao de gram schmidt em dimensao 2', ()=>{
+    let d2 = [[1, 2], [3, 4]]
+    expect(mat.ortonormalizarGramSchmidt(d2))
+    .toStrictEqual(
+        [
+            mat.toFixedVetor([
+                Math.sqrt(5) / 5, 
+                2 * Math.sqrt(5) / 5
+            ]), 
+            mat.toFixedVetor([
+                2 * Math.sqrt(5) / 5, 
+                -Math.sqrt(5) / 5
+            ])
+        ]
+    )
+})
+
+test('efetuar processo de ortonormalizacao de gram schmidt em dimensao 3', ()=>{
+    let d3 = [[1, 2, 3], [2, 3, 4], [4, 5, 6]]
+    expect(mat.ortonormalizarGramSchmidt(d3))
+    .toEqual(
+        expect.arrayContaining(
+            [
+                mat.toFixedVetor([
+                    Math.sqrt(14) / 14,
+                    Math.sqrt(14) / 7,
+                    3 * Math.sqrt(14) / 14
+                ]),
+                mat.toFixedVetor([
+                    4 * Math.sqrt(21) / 21,
+                    Math.sqrt(21) / 21,
+                    -2 * Math.sqrt(21) / 21
+                ])
+            ]
+        )
+    )
+})
+
+test('efetuar processo de ortonormalizacao de gram schmidt em dimensao 4', ()=>{
+    let d4 = [[1, 2, 3, 4], [2, 3, 4, 5], [4, 5, 6, 7], [6, 7, 8, 9]]
+    expect(mat.ortonormalizarGramSchmidt(d4))
+    .toEqual(
+        expect.arrayContaining(
+            [
+                mat.toFixedVetor([
+                    Math.sqrt(30) / 30,
+                    Math.sqrt(30) / 15,
+                    Math.sqrt(30) / 10,
+                    2 * Math.sqrt(30) / 15,
+                ]),
+                mat.toFixedVetor([
+                    Math.sqrt(6) / 3,
+                    Math.sqrt(6) / 6,
+                    0,
+                    -Math.sqrt(6) / 6,
+                ])
+            ]
+        )
+    )
+})
+
+test('efetuar processo de ortonormalizacao de gram schmidt em dimensao 5', ()=>{
+    let d5 = [[1, 2, 3, 4, 5], [2, 3, 4, 5, 6], [4, 5, 6, 7, 8], [6, 7, 8, 9, 10], [8, 9, 10, 11, 12]]
+    expect(mat.ortonormalizarGramSchmidt(d5))
+    .toEqual(
+        expect.arrayContaining(
+            [
+                mat.toFixedVetor([
+                    Math.sqrt(55) / 55,
+                    2 * Math.sqrt(55) / 55,
+                    3 * Math.sqrt(55) / 55,
+                    4 * Math.sqrt(55) / 55,
+                    Math.sqrt(55) / 11,
+                ]),
+                mat.toFixedVetor([
+                    4 * Math.sqrt(110) / 55,
+                    Math.sqrt(110) / 22,
+                    Math.sqrt(110) / 55,
+                    -Math.sqrt(110) / 110,
+                    -(2 * Math.sqrt(110) / 55),
+                ])
+            ]
+        )
+    )
+})
