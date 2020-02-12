@@ -18,7 +18,7 @@ const v3 = [7, 8, 9]
 $(document).ready(function(){
     function getTamanhoVetor(dimensao){
         return `<div class="col-md-${(dimensao == 5) ? 2 : Math.floor((12-3)/dimensao)}"><input type="number" class="form-control" value="0"></div>`.repeat(dimensao)
-        + `<div class="ml-auto pl-1 col-md-${(dimensao == 5) ? 1: 2}"><button class = "btn-dice btn btn-block btn-outline-primary"><i class="fas fa-random"></i></button></div>`
+        + `<div class="ml-auto c-pl col-md-${(dimensao == 5) ? 1: 2}"><button class = "btn-dice btn btn-block btn-outline-primary"><i class="fas fa-random"></i></button></div>`
     }
 
     function removerInputs(){
@@ -49,7 +49,7 @@ $(document).ready(function(){
         }
         $("form").append(
             `<div class="form-group row">
-                <div class = "ml-auto pl-1 col-md-2">
+                <div class = "ml-auto c-pl col-md-2">
                     <button id = "btn-calcular" class = "btn btn-block btn-success"><i class="fas fa-calculator mr-1"></i>Calcular!</button>
                 </div>
             </div>`

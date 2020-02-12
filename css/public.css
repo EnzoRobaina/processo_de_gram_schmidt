@@ -22,10 +22,24 @@ form{
         margin-left: 3vw !important;
         margin-right: 3vw !important;
     }
+    .c-pl{
+        padding-right: 15px!important;
+        padding-left: 15px!important;
+    }
+    .form-group.row.row-vetor div{
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+    #gram-img{
+        width: 100% !important;
+    }
 }
 .inline{
     display: inline !important;
 }
 #gram-img{
     width: 50%;
+}
+.c-pl{
+    padding-left: .25rem;
 }
