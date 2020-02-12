@@ -34,3 +34,13 @@ test('subtrair vetores com valores negativos', ()=>{
     expect(mat.subtrairVetores([-3, -3, -3], [-1, -1, -1]))
     .toStrictEqual([-2, -2, -2])
 })
+
+test('multiplicar vetor por escalar positivo', ()=>{
+    expect(mat.multiplicarPorEscalar([2, 4, 8], 2))
+    .toStrictEqual([4, 8, 16])
+})
+
+test('multiplicar vetor por escalar negativo', ()=>{
+    expect(mat.multiplicarPorEscalar([3, 6, 9], -2))
+    .toStrictEqual([-6, -12, -18])
+})
