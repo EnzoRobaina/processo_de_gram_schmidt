@@ -6,7 +6,9 @@
   "dependencies": {
     "jest": "^25.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.8.3"
+  },
   "scripts": {
     "test": "jest"
   },
