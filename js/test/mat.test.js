@@ -16,3 +16,21 @@ test('calcular produto escalar de vetores com dimensões diferentes', ()=>{
     })
     .toThrowError(/A dimensão dos vetores é diferente/)
 })
+
+test('calcular norma de um vetor', ()=>{
+    expect(mat.calcularNorma([3, 5, -1]))
+    .toBeCloseTo(Math.sqrt(35))
+
+    expect(mat.calcularNorma([-4, -5, -6]))
+    .toBeCloseTo(Math.sqrt(77))
+})
+
+test('subtrair vetores', ()=>{
+    expect(mat.subtrairVetores([3, 3, 3], [1, 1, 1]))
+    .toStrictEqual([2, 2, 2])
+})
+
+test('subtrair vetores com valores negativos', ()=>{
+    expect(mat.subtrairVetores([-3, -3, -3], [-1, -1, -1]))
+    .toStrictEqual([-2, -2, -2])
+})
