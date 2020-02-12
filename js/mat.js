@@ -18,9 +18,9 @@ export function multiplicarPorEscalar(vetor, escalar){
 }
 
 export function calcularProjecao(vetor1, vetor2){
-    let produtoEscalar = calcularProdutoEscalar(vetor1, vetor2)
-    let norma = Math.pow(calcularNorma(vetor1), 2)
-    return multiplicarPorEscalar(vetor1, produtoEscalar/norma).map(valor => parseFloat(valor.toFixed(2)))
+    let numerador = calcularProdutoEscalar(vetor1, vetor2)
+    let denominador = calcularProdutoEscalar(vetor2, vetor2)
+    return multiplicarPorEscalar(vetor2, numerador / denominador)
 }
 
 export function ortonormalizarGramSchmidt(listaDeVetores){
