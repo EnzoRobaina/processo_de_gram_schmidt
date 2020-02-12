@@ -1,0 +1,23 @@
+{
+  "name": "processo_de_gram_schmidt",
+  "version": "1.0.0",
+  "description": "Web app com a finalidade de executar o Processo de Gram-Schmidt sobre um determinado numero de vetores.",
+  "main": "index.js",
+  "dependencies": {
+    "jest": "^25.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EnzoRobaina/processo_de_gram_schmidt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EnzoRobaina/processo_de_gram_schmidt/issues"
+  },
+  "homepage": "https://github.com/EnzoRobaina/processo_de_gram_schmidt#readme"
+}
